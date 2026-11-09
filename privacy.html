@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FVault — Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f5f1;
+      --surface: #ffffff;
+      --ink: #1c241e;
+      --muted: #5b655d;
+      --line: #dce1d8;
+      --accent: #2f7a4f;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121713;
+        --surface: #1a211b;
+        --ink: #eef2ec;
+        --muted: #aeb8b0;
+        --line: #313b32;
+        --accent: #7fc79b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      width: min(760px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 56px 0 48px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 6vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+    .updated { margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+    h2 {
+      margin: 30px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    p, li { color: var(--muted); }
+    a { color: var(--accent); }
+    ul { padding-left: 20px; }
+    .card {
+      margin: 22px 0;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+    .card p:last-child { margin-bottom: 0; }
+    footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: color-mix(in srgb, var(--line) 55%, transparent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand"><span class="mark">FV</span> FVault</div>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective date: 9 November 2026</p>
+
+    <p>
+      FVault is a personal, self-hosted academic dashboard. This policy explains what data
+      FVault accesses, why, and how it is handled.
+    </p>
+
+    <h2>1. Data FVault accesses</h2>
+    <div class="card">
+      <p>When you connect a Google account, FVault requests read-only access to:</p>
+      <ul>
+        <li>Google Classroom courses you are enrolled in;</li>
+        <li>published coursework and its due dates;</li>
+        <li>published course announcements;</li>
+        <li>your own student submission data, as permitted by the requested scope.</li>
+      </ul>
+      <p>
+        FVault currently uses course, coursework, and announcement data to build the dashboard.
+        It does not create, modify, or delete anything in Google Classroom.
+      </p>
+    </div>
+
+    <h2>2. How data is used</h2>
+    <div class="card">
+      <p>
+        Classroom data is normalized and displayed in a private dashboard so that deadlines and
+        announcements from multiple accounts can be seen in one place. FVault does not use
+        Google user data for advertising, profiling, or resale.
+      </p>
+    </div>
+
+    <h2>3. Storage and security</h2>
+    <div class="card">
+      <p>
+        OAuth refresh tokens are stored in an encrypted system credential store on a private
+        server. Classroom records are stored in a local SQLite database on the same server.
+        Tokens and personal data are not committed to a public repository, written to logs, or
+        placed in URL query strings.
+      </p>
+      <p>
+        The dashboard is bound to the server's loopback interface and is accessed through a
+        private network or SSH tunnel. It is not publicly hosted.
+      </p>
+    </div>
+
+    <h2>4. Sharing</h2>
+    <div class="card">
+      <p>
+        FVault does not sell, rent, or share Google user data with third parties. Data stays on
+        the private server controlled by the operator. No advertising networks or analytics
+        services receive Google user data.
+      </p>
+    </div>
+
+    <h2>5. Retention and deletion</h2>
+    <div class="card">
+      <p>
+        Data remains on the private server until it is deleted by the operator. You can revoke
+        FVault's access at any time from your Google Account permissions page:
+        <a href="https://myaccount.google.com/permissions" rel="noreferrer">
+          https://myaccount.google.com/permissions
+        </a>.
+      </p>
+      <p>
+        After access is revoked, FVault can no longer fetch new data. Locally stored records can
+        be removed by deleting the FVault database on the private server.
+      </p>
+    </div>
+
+    <h2>6. Google API Services User Data Policy</h2>
+    <div class="card">
+      <p>
+        FVault's use of information received from Google APIs adheres to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noreferrer">
+          Google API Services User Data Policy
+        </a>, including the Limited Use requirements.
+      </p>
+    </div>
+
+    <h2>7. Contact</h2>
+    <div class="card">
+      <p>
+        Questions about this policy or FVault's data handling can be sent through the support
+        contact shown on the FVault OAuth consent screen.
+      </p>
+    </div>
+
+    <h2>8. Changes</h2>
+    <div class="card">
+      <p>
+        If this policy changes, the updated version will be published on this page with a new
+        effective date.
+      </p>
+    </div>
+
+    <footer>
+      FVault is a personal project. It is not affiliated with Google, Universitas Brawijaya,
+      BRONE, or SIAM. Google Classroom is a trademark of Google LLC.
+    </footer>
+  </main>
+</body>
+</html>

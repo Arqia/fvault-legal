@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FVault — Personal Academic Dashboard</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f5f1;
+      --surface: #ffffff;
+      --ink: #1c241e;
+      --muted: #5b655d;
+      --line: #dce1d8;
+      --accent: #2f7a4f;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121713;
+        --surface: #1a211b;
+        --ink: #eef2ec;
+        --muted: #aeb8b0;
+        --line: #313b32;
+        --accent: #7fc79b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    main {
+      width: min(760px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 64px 0 48px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 7vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 19px;
+      letter-spacing: -0.01em;
+    }
+    p, li { color: var(--muted); }
+    .lead {
+      max-width: 58ch;
+      margin: 0 0 26px;
+      font-size: 17px;
+      color: var(--muted);
+    }
+    .card {
+      margin: 24px 0;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+    }
+    .card p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); }
+    footer {
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    ul { padding-left: 20px; }
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: color-mix(in srgb, var(--line) 55%, transparent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand"><span class="mark">FV</span> FVault</div>
+
+    <h1>A personal academic dashboard.</h1>
+    <p class="lead">
+      FVault brings academic deadlines, course announcements, and attendance notices into one
+      private dashboard. It is built for personal use by one student.
+    </p>
+
+    <div class="card">
+      <h2>What it does</h2>
+      <p>
+        FVault connects to Google Classroom with read-only access to show active courses,
+        published coursework, and announcements. It also has adapters planned for BRONE
+        (Moodle) and SIAM at Universitas Brawijaya.
+      </p>
+      <p>
+        The dashboard runs on a private, self-hosted server. It is not a public service and it
+        is not offered to other users.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Privacy</h2>
+      <p>
+        FVault only reads the data needed for the dashboard. Google OAuth refresh tokens are
+        stored encrypted at rest on the private server. Classroom data is stored in a local
+        SQLite database and is never sold or shared with advertisers.
+      </p>
+      <p><a href="./privacy.html">Read the full privacy policy</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>
+        For questions about FVault, use the support contact shown on the FVault OAuth consent
+        screen.
+      </p>
+    </div>
+
+    <footer>
+      FVault is a personal project. It is not affiliated with Google, Universitas Brawijaya,
+      BRONE, or SIAM. Google Classroom is a trademark of Google LLC.
+    </footer>
+  </main>
+</body>
+</html>
